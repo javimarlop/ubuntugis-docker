@@ -19,4 +19,4 @@ RUN apt-get install -y curl git mc build-essential python-setuptools python-dev 
 # Java
 RUN apt-get install -y default-jre 
 
-RUN pip install scikit-learn numpy gdal os sys
+# RUN pip install scikit-learn scipy numpy gdal os sys
