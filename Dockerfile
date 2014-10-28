@@ -14,7 +14,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties pip
+RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties
 
 # Java
 RUN apt-get install -y default-jre 
