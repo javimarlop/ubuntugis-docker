@@ -14,9 +14,9 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties
+RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.2.2 libgeos-dev 
 
 # Java
 RUN apt-get install -y default-jre 
 
-# RUN pip install scikit-learn scipy numpy gdal os sys
+RUN pip install scikit-learn
