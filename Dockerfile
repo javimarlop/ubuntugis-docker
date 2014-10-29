@@ -16,7 +16,10 @@ RUN apt-get upgrade -y
 # Install Utilities
 RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.2.2 libgeos-dev 
 
-# Java
-RUN apt-get install -y default-jre wget grass70 grass70-doc grass70-core grass70-gui grass70-dev
-
 RUN pip install scikit-learn
+
+# Java wget git
+RUN apt-get install -y default-jre wget git
+
+# GRASS GIS 7
+#RUN apt-get install -y grass70 grass70-doc grass70-core grass70-gui grass70-dev
