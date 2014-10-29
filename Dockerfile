@@ -2,13 +2,16 @@ FROM ubuntu:14.04
 
 # Connect to ubuntugis
 
-RUN echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main " >> /etc/apt/sources.list
-RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main "  >> /etc/apt/sources.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160
+#RUN echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main " >> /etc/apt/sources.list
+#RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main "  >> /etc/apt/sources.list
+#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160
 
 #RUN echo "deb http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
 #RUN echo "deb-src http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
 #RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 26D57B27
+
+RUN apt-get install python-software-properties
+RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 
 # update apt cache and upgrade
 RUN apt-get update
