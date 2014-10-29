@@ -18,7 +18,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.2.2 libgeos-dev nano wget git dialog
+RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos libgeos-dev nano wget git dialog
 
 RUN pip install scikit-learn
 
