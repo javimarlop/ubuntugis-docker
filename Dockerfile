@@ -2,13 +2,13 @@ FROM ubuntu:14.04
 
 # Connect to ubuntugis
 
-#RUN echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main " >> /etc/apt/sources.list
-#RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu trusty main "  >> /etc/apt/sources.list
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160
+RUN echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu precise main " >> /etc/apt/sources.list
+RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu precise main " >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160
 
-#RUN echo "deb http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
-#RUN echo "deb-src http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 26D57B27
+RUN echo "deb http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
+RUN echo "deb-src http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 26D57B27
 
 #RUN apt-get install python-software-properties
 #RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
@@ -27,8 +27,4 @@ RUN apt-get install -y default-jre
 
 # GRASS GIS 7
 
-RUN add-apt-repository -y ppa:grass/grass-stable
-RUN apt-get update
-RUN apt-get install grass70 grass70-gui
-
-#RUN apt-get install -y grass70 grass70-doc grass70-core grass70-gui grass70-dev
+RUN apt-get install -y grass71
