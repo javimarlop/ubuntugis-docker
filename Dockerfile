@@ -1,8 +1,9 @@
 FROM ubuntu:12.04
 
 # Connect to ubuntugis
-RUN echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu precise main " >> /etc/apt/sources.list
-RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu precise main"  >> /etc/apt/sources.list
+
+RUN echo "deb http://ppa.launchpad.net/ubuntugis/ppa/ubuntu precise main" >> /etc/apt/sources.list
+RUN echo "deb-src http://ppa.launchpad.net/ubuntugis/ppa/ubuntu precise main"  >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160
 
 RUN echo "deb http://ppa.launchpad.net/grass/grass-devel/ubuntu precise main " >> /etc/apt/sources.list
