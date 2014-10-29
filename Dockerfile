@@ -24,4 +24,4 @@ RUN apt-get install -y default-jre
 
 # GRASS GIS 7
 
-RUN apt-get install -y grass71
+RUN apt-get install -y grass70
