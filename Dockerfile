@@ -15,7 +15,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.4.2 libgeos-dev nano wget git dialog libgdal1-dev  libgdal1h libgdal1-1.10.0-grass grass-core
+RUN apt-get install -y curl git mc build-essential python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.4.2 libgeos-dev nano wget git dialog libgdal1-dev  libgdal1h grass-core # libgdal1-1.10.0-grass
 
 RUN pip install scikit-learn
 
