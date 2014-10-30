@@ -6,6 +6,7 @@ docker run --rm -tiv /home/webuser/grassdb:/opt/grassdb javimarlop/ubuntugis-doc
 #chmod -R ugo+rwx hanksgrass7/
 
 su user
+# 1st tzar localrun
 
 # python
 import os
