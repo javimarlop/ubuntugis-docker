@@ -1,4 +1,9 @@
 ubuntugis-docker
 ================
 
-grass gis 7 python 2.7 gdal 
+## Includes:
+
+* GRASS GIS 7
+* Python 2.7
+* GDAL, GEOS, PROJ
+* R
