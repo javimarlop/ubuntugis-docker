@@ -16,16 +16,18 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-RUN apt-get install --force-yes build-essential curl iputils-ping fuse fuse-utils libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.4.2 libgeos-dev nano wget git dialog libgdal1-dev  libgdal1h grass-core # libgdal1-1.10.0-grass
+RUN apt-get install -y build-essential curl iputils-ping fuse fuse-utils libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.4.2 libgeos-dev nano wget git dialog libgdal1-dev  libgdal1h grass-core # libgdal1-1.10.0-grass
 
 RUN pip install scikit-learn
 
 # Java
 RUN apt-get install -y default-jre 
 
-# GRASS GIS 7
+# GRASS GIS 7 and R
 
-RUN apt-get install --force-yes flex  bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml #libapparmor1 gdebi-core
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+
+RUN apt-get install -y flex  bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml libapparmor1 gdebi-core
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
 
