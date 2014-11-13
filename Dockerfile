@@ -27,7 +27,7 @@ RUN apt-get install -y default-jre
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
-RUN apt-get install -y flex  bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml libapparmor1 gdebi-core
+RUN apt-get install -y --force-yes flex  bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml libapparmor1 gdebi-core
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
 
