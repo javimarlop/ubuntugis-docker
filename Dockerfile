@@ -19,6 +19,8 @@ RUN apt-get upgrade -y
 RUN apt-get install -y build-essential curl iputils-ping fuse fuse-utils libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip python-software-properties python-numpy python-scipy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-3.4.2 libgeos-dev nano wget git dialog libgdal1-dev  libgdal1h grass-core # libgdal1-1.10.0-grass
 
 RUN pip install scikit-learn
+RUN pip install numpy --upgrade
+RUN pip install scipy --upgrade
 
 # Java
 RUN apt-get install -y default-jre 
@@ -34,4 +36,7 @@ RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/'
 RUN useradd -m user
 RUN usermod -a -G fuse user
 RUN usermod -s /bin/bash user
+
+
+
 
