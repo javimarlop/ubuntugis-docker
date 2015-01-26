@@ -29,7 +29,13 @@ RUN apt-get install -y default-jre
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
-RUN apt-get install -y --force-yes flex  bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml libapparmor1 gdebi-core
+RUN apt-get install -y --force-yes flex firefox openssh-server bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-dev  libfftw3-dev libfftw3-3 libfftw3-dev  libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk2.6 python-wxgtk2.6-dbg python-wxgtk2.8 python-wxgtk2.8-dbg grass70-core  grass70-dev grass70-dev-doc grass70-doc r-base r-base-dev r-cran-xml libapparmor1 gdebi-core xserver-xephyr xdm
+
+# Configuring xdm to allow connections from any IP address and ssh to allow X11 Forwarding.
+RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
+RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
+RUN ln -s /usr/bin/Xorg /usr/bin/X
+RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
 
@@ -37,6 +43,14 @@ RUN useradd -m user
 RUN usermod -a -G fuse user
 RUN usermod -s /bin/bash user
 
+RUN apt-get update
+RUN apt-get upgrade -y
 
+EXPOSE 22
+
+RUN mkdir /var/run/sshd
+
+RUN /etc/init.d/xdm restart
+RUN /usr/sbin/sshd -D
 
 

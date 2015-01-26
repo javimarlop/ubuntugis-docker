@@ -9,3 +9,4 @@ ubuntugis-docker
 * Python 2.7
 * GDAL, GEOS, PROJ
 * R
+* SSH
