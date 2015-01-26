@@ -5,8 +5,20 @@ ubuntugis-docker
 
 ## Includes:
 
+* Ubuntu 14.04
 * GRASS GIS 7
 * Python 2.7
 * GDAL, GEOS, PROJ
 * R
-* SSH
+* SSH + X display
+
+## Get/Build it
+
+```
+docker pull javimarlop/ubuntugis-docker
+
+# or clone the repository, open a terminal into it and build it:
+
+sudo docker build --tag="ubuntugis-docker" .
+
+```
