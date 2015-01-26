@@ -48,7 +48,7 @@ RUN apt-get install -y --force-yes flex firefox openssh-server bison libtiff4-de
 # Configuring xdm to allow connections from any IP address and ssh to allow X11 Forwarding.
 RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
 RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
-RUN ln -s /usr/bin/Xorg /usr/bin/X
+#RUN ln -s /usr/bin/Xorg /usr/bin/X
 RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
