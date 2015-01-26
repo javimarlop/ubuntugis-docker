@@ -22,7 +22,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install Utilities
-<<<<<<< HEAD
+
 RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-*1.10.0-grass
 
 RUN pip install ipython ipython-notebook --upgrade
@@ -30,14 +30,6 @@ RUN pip install scikit-learn --upgrade
 RUN pip install numpy --upgrade
 RUN pip install scipy --upgrade
 RUN pip install gdal --upgrade
-=======
-RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse fuse-utils libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-nose libblas-dev liblapack-dev gfortran libgdal1-*#1.10.0-grass
-
-RUN pip install ipython ipython-notebook
-RUN pip install scikit-learn
-RUN pip install numpy --upgrade
-RUN pip install scipy
->>>>>>> 67ee51118a8df9e5411f10b09e8b737c8244382c
 
 # Java
 RUN apt-get install -y default-jre-headless default-jre 
@@ -51,11 +43,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 #RUN gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 #RUN gpg -a --export E084DAB9 | sudo apt-key add -
 
-<<<<<<< HEAD
 RUN apt-get install -y --force-yes flex firefox openssh-server bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-* libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk* grass70-* r-base r-base-dev r-cran-xml libapparmor1 gdebi-core xserver-xorg xdm xterm
-=======
-RUN apt-get install -y --force-yes flex firefox openssh-server bison libtiff4-dev mesa-common-dev libglu-dev  libfftw3-* libcairo2-dev python-gtk2 python-gtk2-dbg python-gtk2-dev python-wxgtk* grass70-* r-base r-base-dev r-cran-xml libapparmor1 gdebi-core xserver-xorg xdm
->>>>>>> 67ee51118a8df9e5411f10b09e8b737c8244382c
 
 # Configuring xdm to allow connections from any IP address and ssh to allow X11 Forwarding.
 RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
