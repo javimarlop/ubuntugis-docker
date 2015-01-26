@@ -23,7 +23,7 @@ RUN apt-get upgrade -y
 
 # Install Utilities
 
-RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook libgdal1-1.10.1-grass
+RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-1.10.1-grass
 
 #RUN pip install ipython ipython-notebook --upgrade
 RUN pip install scikit-learn --upgrade
