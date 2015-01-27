@@ -23,13 +23,13 @@ RUN apt-get upgrade -y
 
 # Install Utilities
 
-RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-1.10.1-grass
+RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev libpython-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-1.10.1-grass
 
 #RUN pip install ipython ipython-notebook --upgrade
-RUN pip install scikit-learn --upgrade
-RUN pip install numpy --upgrade
-RUN pip install scipy --upgrade
-RUN pip install gdal --upgrade
+RUN pip install scikit-learn #--upgrade
+#RUN pip install numpy --upgrade
+#RUN pip install scipy --upgrade
+#RUN pip install gdal --upgrade
 
 # Java
 RUN apt-get install -y default-jre-headless default-jre 
@@ -64,7 +64,7 @@ EXPOSE 22
 
 RUN mkdir /var/run/sshd
 
-RUN /etc/init.d/xdm restart
-RUN /usr/sbin/sshd -D
+#RUN /etc/init.d/xdm restart
+#RUN /usr/sbin/sshd -D
 
 
