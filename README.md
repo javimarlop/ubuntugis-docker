@@ -20,5 +20,10 @@ docker pull javimarlop/ubuntugis-docker
 # or clone the repository, open a terminal into it and build it:
 
 sudo docker build --tag="ubuntugis-docker" .
+```
 
+## Use it
+
+```
+docker run --rm -ti javimarlop/ubuntugis-docker /bin/bash
 ```
