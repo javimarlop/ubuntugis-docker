@@ -60,7 +60,8 @@ RUN usermod -s /bin/bash user
 RUN apt-get update
 RUN apt-get upgrade -y
 
-EXPOSE 22
+COPY ./ssh_config /etc/ssh/ssh_config
+EXPOSE 27
 
 RUN mkdir /var/run/sshd
 
