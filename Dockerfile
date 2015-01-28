@@ -23,7 +23,7 @@ RUN apt-get upgrade -y
 
 # Install Utilities
 
-RUN apt-get install -y --force-yes build-essential curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev libpython-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-1.10.1-grass
+RUN apt-get install -y --force-yes build-essential language-pack-en* curl iputils-ping fuse libfuse-dev libfuse2 git mc sshfs python-setuptools python-dev libpython-dev python-pip software-properties-common python-numpy libgdal-dev python-gdal gdal-bin libproj0 libproj-dev python-pyproj libgeos-* nano wget git dialog libgdal1-dev  libgdal1h grass-core python-matplotlib python-pandas python-sympy python-scipy python-nose libblas-dev liblapack-dev gfortran ipython ipython-notebook #libgdal1-1.10.1-grass
 
 #RUN pip install ipython ipython-notebook --upgrade
 RUN pip install scikit-learn #--upgrade
@@ -61,7 +61,7 @@ RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/'
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN echo LANG=”en_US.UTF-8” > /etc/default/locale
+RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 COPY ./sshd /etc/pam.d/sshd
 COPY ./ssh_config /etc/ssh/ssh_config
 
