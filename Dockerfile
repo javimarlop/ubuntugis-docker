@@ -49,23 +49,28 @@ RUN apt-get install -y --force-yes flex firefox openssh-server bison libtiff4-de
 RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
 RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
 #RUN ln -s /usr/bin/Xorg /usr/bin/X
-RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
+#RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
 
 RUN useradd -m user
+RUN echo -e "docker\ndocker\n" | passwd user
 RUN usermod -a -G fuse user
 RUN usermod -s /bin/bash user
 
 RUN apt-get update
 RUN apt-get upgrade -y
 
+RUN echo LANG=”en_US.UTF-8” > /etc/default/locale
+COPY ./sshd /etc/pam.d/sshd
 COPY ./ssh_config /etc/ssh/ssh_config
-EXPOSE 27
+
+EXPOSE 22
 
 RUN mkdir /var/run/sshd
 
-#RUN /etc/init.d/xdm restart
-#RUN /usr/sbin/sshd -D
+RUN /etc/init.d/xdm restart
+#RUN service ssh restart
+
 
 

@@ -25,5 +25,11 @@ sudo docker build --tag="ubuntugis-docker" .
 ## Use it
 
 ```
-docker run --rm -ti javimarlop/ubuntugis-docker /bin/bash
+# start a container
+
+docker run -d -p 27:22 javimarlop/ubuntugis-docker
+
+# connect to it
+
+ssh -X user@0.0.0.0 -p 27 (passw: 'docker')
 ```
