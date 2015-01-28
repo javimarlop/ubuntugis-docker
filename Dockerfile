@@ -53,10 +53,10 @@ RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
 
 RUN echo "local({r <- getOption('repos');r['CRAN'] <- 'http://cran.rstudio.com/';options(repos = r)})" > /etc/R/Rprofile.site
 
-RUN useradd -m user
-RUN echo -e "docker\ndocker\n" | passwd user
-RUN usermod -a -G fuse user
-RUN usermod -s /bin/bash user
+#RUN useradd -m user
+#RUN echo -e "docker\ndocker\n" | passwd user
+#RUN usermod -a -G fuse user
+#RUN usermod -s /bin/bash user
 
 RUN apt-get update
 RUN apt-get upgrade -y

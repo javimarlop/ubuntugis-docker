@@ -25,8 +25,13 @@ sudo docker build --tag="ubuntugis-docker" .
 ## Use it
 
 ```
-# start a container
+# previously create a new user
+useradd -m user
+echo -e "docker\ndocker\n" | passwd user
+usermod -a -G fuse user
+usermod -s /bin/bash user
 
+# start a container
 docker run -d -p 27:22 javimarlop/ubuntugis-docker
 
 # connect to it
