@@ -81,7 +81,13 @@ RUN \
   apt-get update && \
   apt-get install -y opencpu
 
-RUN apt-get install -y libxml2 libxml2-dev
+RUN apt-get install -y libxml2 libxml2-dev qgis shapelib
+
+RUN pip install rpy2
+
+RUN wget http://download.savannah.gnu.org/releases/pktools/install_pktools.sh
+
+RUN bash install_pktools.sh 
 
 RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 COPY ./sshd /etc/pam.d/sshd
