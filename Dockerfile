@@ -79,9 +79,13 @@ RUN \
   apt-get install -y software-properties-common && \
   add-apt-repository -y ppa:opencpu/opencpu-dev && \
   apt-get update && \
-  apt-get install -y opencpu
+  apt-get install -y opencpu vnc4server vncviewer
 
-RUN apt-get install -y libxml2 libxml2-dev qgis shapelib
+RUN \
+  apt-add-repository -y ppa:ubuntu-mate-dev/ppa && \
+  apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate && \
+  apt-get update && apt-get upgrade && \
+  apt-get install -y --no-install-recommends ubuntu-mate-core ubuntu-mate-desktop
 
 RUN pip install rpy2
 
