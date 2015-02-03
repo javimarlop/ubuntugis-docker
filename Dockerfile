@@ -84,7 +84,7 @@ RUN \
 RUN \
   apt-add-repository -y ppa:ubuntu-mate-dev/ppa && \
   apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate && \
-  apt-get update && apt-get upgrade && \
+  apt-get update && apt-get upgrade # && \
   #apt-get install -y --no-install-recommends ubuntu-mate-core ubuntu-mate-desktop
 
 RUN pip install rpy2
