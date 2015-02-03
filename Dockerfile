@@ -81,6 +81,8 @@ RUN \
   apt-get update && \
   apt-get install -y opencpu vnc4server vncviewer pgadmin3
 
+RUN apt-get install --reinstall ca-certificates
+
 RUN \
   apt-add-repository -y ppa:ubuntu-mate-dev/ppa && \
   apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate && \
