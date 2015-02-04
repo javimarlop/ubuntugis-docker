@@ -50,4 +50,11 @@ ssh -X user@0.0.0.0 -p 27 #(passw: 'changeme')
 ipython notebook --ip=0.0.0.0 --port=8888 --pylab=inline --no-browser &
 http://0.0.0.0:8888/ # on your host's browser
 
+# If you want to connect through VNC, you will need to install a desktop environment like MATE:
+
+sudo apt-add-repository -y ppa:ubuntu-mate-dev/ppa
+sudo apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate
+sudo apt-get update && apt-get upgrade
+sudo apt-get install -y --no-install-recommends ubuntu-mate-core ubuntu-mate-desktop
+
 ```
