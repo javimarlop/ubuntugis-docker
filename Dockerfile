@@ -108,6 +108,6 @@ RUN mkdir /var/run/sshd
 
 RUN /etc/init.d/xdm restart
 #RUN service ssh restart
-CMD service opencpu restart && tail -F /var/log/opencpu/apache_access.log
+#CMD service opencpu restart && tail -F /var/log/opencpu/apache_access.log
 
 
