@@ -97,10 +97,10 @@ RUN Rscript -e "install.packages('XML', type = 'source');install.packages(c('dev
 
 #RUN echo X11Forwarding yes >> /etc/ssh/ssh_config # not working
 
-useradd -M javier
-echo -e "ugis\nugis\n" | passwd javier
-usermod -s /bin/bash javier
-adduser javier sudo
+RUN useradd -M javier
+RUN echo -e "ugis\nugis\n" | passwd javier
+RUN usermod -s /bin/bash javier
+RUN adduser javier sudo
 
 EXPOSE 22
 EXPOSE 8888
