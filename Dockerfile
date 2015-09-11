@@ -98,7 +98,8 @@ RUN Rscript -e "install.packages('XML', type = 'source');install.packages(c('dev
 #RUN echo X11Forwarding yes >> /etc/ssh/ssh_config # not working
 
 RUN useradd -M javier
-RUN echo -e "ugis\nugis\n" | passwd javier
+#RUN echo -e "ugis\nugis\n" | passwd javier
+RUN echo 'javier:docker.io' | chpasswd
 RUN usermod -s /bin/bash javier
 RUN adduser javier sudo
 
