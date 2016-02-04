@@ -76,9 +76,9 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN \
-  apt-get install -y software-properties-common && \
-  add-apt-repository -y ppa:opencpu/opencpu-1.5 && \ # add-apt-repository -y ppa:opencpu/opencpu-dev 
-  apt-get update && \
+  apt-get install -y software-properties-common \
+  add-apt-repository -y ppa:opencpu/opencpu-1.5 \ # add-apt-repository -y ppa:opencpu/opencpu-dev 
+  apt-get update \
   apt-get install -y opencpu vnc4server vncviewer pgadmin3 postgis
 
 #RUN apt-get install --reinstall ca-certificates
